@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-if [ "$#" -lt 3 ]; then
+if [ "$#" -lt 5 ]; then
     echo -e "Trim reads, align with STAR, generate BigWigs, and quantify with Salmon \n\
     Usage: $0 <sample_list.txt> <fastq_dir> <output_dir> <star_index> <salmon_index> [num_threads] \n\
     Note: <sample_list.txt> should list one sample ID per line (no extensions)"
