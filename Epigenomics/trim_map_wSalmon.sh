@@ -115,7 +115,7 @@ process_sample() {
 export -f process_sample
 
 ## Run all samples in parallel
-echo "[INFO] Running STAR + bamCoverage $( $RUN_SALMON && echo '+ Salmon' || echo '(no Salmon)' )..."
+echo "[INFO] Running BWA MEM + bamCoverage $( $RUN_SALMON && echo '+ Salmon' || echo '(no Salmon)' )..."
 printf "%s\n" "${samples[@]}" | parallel -j "$THREADS" process_sample {}
 
 echo "[DONE] Pipeline completed successfully. All outputs in $OUTDIR"
