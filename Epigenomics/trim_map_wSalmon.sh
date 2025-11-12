@@ -113,8 +113,6 @@ process_sample() {
 }
 
 export -f process_sample
-export OUTDIR FQDIR BWAIDX SLMIDX THREADS RUN_SALMON
-
 
 ## Run all samples in parallel
 echo "[INFO] Running STAR + bamCoverage $( $RUN_SALMON && echo '+ Salmon' || echo '(no Salmon)' )..."
