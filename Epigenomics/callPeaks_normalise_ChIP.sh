@@ -51,7 +51,7 @@ process_sample() {
 
     # Subtract input
     macs2 bdgcmp -t "$OUTDIR/data/peaks/${sample}.filtered.sorted.rmDup.bam_treat_pileup.bdg" \
-    -c "$OUTDIR/data/peaks/${sample}.filtered.sorted.rmDup.bamq()_control_lambda.bdg" \
+    -c "$OUTDIR/data/peaks/${sample}.filtered.sorted.rmDup.bam_control_lambda.bdg" \
     -m subtract --outdir "$OUTDIR/data/peaks" --o-prefix "${sample}"
 
     # Make bigwig from bedgraph
