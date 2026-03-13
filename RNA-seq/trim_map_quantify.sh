@@ -92,7 +92,6 @@ if $RUN_SALMON && [[ -z "$SLMIDX" ]]; then
     exit 1
 fi
 
-
 if ! $RUN_SALMON && ! $RUN_STAR; then
     echo "[ERROR] --no-salmon and --no-star cannot be used together."
     exit 1
@@ -202,7 +201,7 @@ export -f process_sample
 
 
 ## Run all samples in parallel
-echo "[INFO] Running $( $RUN_STAR && echo 'STAR MEM + bamCoverage' || echo '(no STAR)' ) $( $RUN_SALMON && echo '+ Salmon' || echo '(no Salmon)' )..."
+echo "[INFO] Running $( $RUN_STAR && echo 'STAR + bamCoverage' || echo '(no STAR)' ) $( $RUN_SALMON && echo '+ Salmon' || echo '(no Salmon)' )..."
 printf "%s\n" "${samples[@]}" | parallel -j 4 process_sample {}
 
 echo "[DONE] Pipeline completed successfully. All outputs in $OUTDIR"
